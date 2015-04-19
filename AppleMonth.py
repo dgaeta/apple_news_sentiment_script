@@ -41,7 +41,9 @@ for news_day in headlines_for_month:
       score =float(sou.find('score').string)
       url_scores_dict.setdefault(url, score)
       single_day_scores.append(score)
-    day_scores.append(single_day_scores)
+    if len(single_day_scores) != 0:
+      day_scores.append(single_day_scores)
+
 
 if len(day_scores) > 0:
   month_scores.append(sum(day_scores)/ float(len(day_scores)))
